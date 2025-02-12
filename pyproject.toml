@@ -1,0 +1,28 @@
+[project]
+name = "hstat"
+version = "0.1.0"
+description = "For when you want a quick way to aggregate stats of a house."
+authors = [
+    {name = "Tyler Gaw",email = "tyler.agaw@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.bumpver]
+current_version = "0.1.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = true
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+"hstat/__init__.py" = ["{version}"]
